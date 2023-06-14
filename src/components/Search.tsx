@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import styled from "styled-components";
-import Button from "./Button";
+
 
 const SearchContainer = styled.div`
   width: 550px;

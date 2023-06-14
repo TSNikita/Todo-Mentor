@@ -1,13 +1,9 @@
-import React, {useCallback, useState} from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 
 import styled from "styled-components";
-import Button from "./Button";
-import { Checkbox } from 'antd';
-import type { CheckboxChangeEvent } from 'antd/es/checkbox';
 
 import '../assets/styles/style.css'
-import {data} from "../models/todo.model";
+
 
 
 const ContainerTodo = styled.div`

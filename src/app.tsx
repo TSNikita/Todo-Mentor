@@ -1,6 +1,5 @@
 import React from 'react';
 
-import {SApp, SHeader, SLink, SLogo} from "./assets/styles/app.styles";
 import Todo from "./pages/Todo";
 
 import styled from "styled-components";

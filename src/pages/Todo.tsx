@@ -8,7 +8,6 @@ import TaskAdd from "../components/TaskAdd";
 import Search from "../components/Search";
 
 import styled from "styled-components";
-import {log} from "util";
 
 const ContainerTodo = styled.div`
   display: flex;
@@ -61,7 +60,7 @@ const ButtonDropDown = styled.button`
 
 const Todo = () => {
     const [task, setTask] = useState(data)
-    const [newTask, setNewTask] = useState(data)
+    const [newTask, setNewTask] = useState(task)
     const [visible, setVisible] = useState(false)
     const [taskAdd, setTaskAdd] = useState('')
     const [valueInput, setValueInput] = useState('');
@@ -132,6 +131,7 @@ const Todo = () => {
 //  удаляем task
     const handleDelete = useCallback((id: string) => {
         setNewTask(newTask.filter(task => task.id !== id))
+        toLocal()
     },[newTask])
 
         // меняем флаг на противоположный
@@ -142,6 +142,7 @@ const Todo = () => {
             }
             return newTask
         }))
+        toLocal()
     }, [newTask])
 
 //сохранить редактирование
@@ -152,6 +153,7 @@ const Todo = () => {
             }
             return item
         }))
+        toLocal()
         setEdit(null)
     }
 // фильтр
