@@ -61,11 +61,11 @@ const ButtonDropDown = styled.button`
 const Todo = () => {
     const [task, setTask] = useState(data)
     const [newTask, setNewTask] = useState(task)
-    const [visible, setVisible] = useState(false)
-    const [taskAdd, setTaskAdd] = useState('')
-    const [valueInput, setValueInput] = useState('');
+    const [visible, setVisible] = useState<boolean>(false)
+    const [taskAdd, setTaskAdd] = useState<string>('')
+    const [valueInput, setValueInput] = useState<string>('');
     const [edit, setEdit] = useState<string | boolean | null>(null)
-    const [search, setSearch] = useState('')
+    const [search, setSearch] = useState<string>('')
 
 
 
@@ -81,7 +81,8 @@ const Todo = () => {
 
     // клик вне элемента
     useEffect(() => {
-        const checkOutside = (e: any) => {
+        const checkOutside = (e: MouseEvent) => {
+            // @ts-ignore
             if(visible && tooltipRef.current && !tooltipRef.current.contains(e.target)) {
                 setVisible(false)
             }
@@ -99,12 +100,10 @@ const Todo = () => {
        if(status === 'all') {
            setNewTask(task)
            setVisible(false)
-           toLocal()
        } else {
            let newTodo = [...task].filter(item => item.completed === status)
            setNewTask(newTodo)
            setVisible(false)
-           toLocal()
        }
     }
 
