@@ -68,7 +68,6 @@ const Todo = () => {
     const [search, setSearch] = useState<string>('')
 
 
-
     useEffect(() => {
         setNewTask(JSON.parse(localStorage.getItem('todos')!))
     }, [])

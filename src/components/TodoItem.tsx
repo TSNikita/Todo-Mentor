@@ -100,11 +100,11 @@ type TodoItemPropsType = {
 }
 
 
-function TodoItem({title, id, checked, children, checkedOnClick, onChangeInputSave, valueSave, handeSaveInput, edit}: TodoItemPropsType) {
+const TodoItem = ({title, id, checked, children, checkedOnClick, onChangeInputSave, valueSave, handeSaveInput, edit}: TodoItemPropsType) => {
     return (
         <ContainerTodo>
             <div>
-                {edit == id ? (<ContainerEditBlock>
+                {edit === id ? (<ContainerEditBlock>
                     <InputEdit type="text" value={valueSave} onChange={onChangeInputSave} />
                     <ButtonEdit onClick={handeSaveInput} >Save</ButtonEdit>
                         </ContainerEditBlock>) :
