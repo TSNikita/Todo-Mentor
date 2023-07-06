@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Todo from "./pages/Todo";
+import Todo from "./pages/TodoPage/Todo";
 
 import styled from "styled-components";
 

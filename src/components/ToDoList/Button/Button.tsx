@@ -20,13 +20,13 @@ const ButtonStyle = styled.button`
 
 type ButtonPropsType = {
     title: string,
-    onClick: () => void
+    onClick: (addRef: any) => void
 }
 
 function Button({title, onClick}: ButtonPropsType) {
     return (
         <div>
-            <ButtonStyle onClick={onClick} >{title}</ButtonStyle>
+            <ButtonStyle type='button' onClick={onClick} >{title}</ButtonStyle>
         </div>
     );
 }
